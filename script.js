@@ -13,28 +13,21 @@ class Animal {
 }
 
 class Cat extends Animal {
-    constructor(species) {
-        super(species);
-    }
-
     purr() {
         console.log("purr");
     }
 }
 
 class Dog extends Animal {
-    constructor(species) {
-        super(species);
-    }
-
     bark() {
         console.log("woof");
     }
 }
 
-// Export for Cypress if required
-if (typeof module !== "undefined") {
-    module.exports = { Animal, Cat, Dog };
-}
+// 🔥 IMPORTANT: Expose to window for Cypress
+window.Animal = Animal;
+window.Cat = Cat;
+window.Dog = Dog;
+
 
 
